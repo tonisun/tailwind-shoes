@@ -27,7 +27,7 @@ export function Nav (){
         <div className={`${!isMobileMenuShown && "hidden"} w-full lg:block lg:w-auto`}>
             <ul className='lg:space-x-8 flex flex-col lg:flex-row p-4 cursor-pointer bg-gray-50 text-lg border lg:bg-transparent border-gray-100 rounded lg:border-none text-left'>
                 {ROUTES.map((route, i) => {
-                    return <li className={`rounded-lg py-2 px-3 ${i === 0 ?"bg-blue-500 text-white lg:bg-transparent lg:text-blue-500" : "hover:bg-gray-100"} ${(i==3 || i==4) ? '':''}`} key={route}>{route}</li>
+                    return <li className={`lg:hover:bg-transparent lg:hover:text-blue-500 rounded-lg py-2 px-3 ${i === 0 ?"bg-blue-500 text-white lg:bg-transparent lg:text-blue-500" : "hover:bg-gray-100"} ${(i==3 || i==4) && "lg:text-white"}`} key={route}>{route}</li>
                 })}
             </ul>
         </div>
