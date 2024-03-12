@@ -13,7 +13,9 @@ export function Select({title,options}) {
             <option key={option} value={option}>{option}</option>
           ))}
         </select>
-        <div className="absolute inset-y-0 right-0 p-3 flex-center">
+
+        {/* Arrow Icon */}
+        <div className="absolute inset-y-0 right-0 p-3 pointer-events-none flex-center">
           <IoIosArrowDown size={25}/>
         </div>
       </div>

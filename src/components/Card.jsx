@@ -11,7 +11,7 @@ export function Card({item}) {
 
         {/* Section 2 - Image */}
         <div className="absolute left-[40%] top-5">
-            <img src={item.src} alt={item.title + " Picture"} className="w-56 h-40" />
+            <img src={item.src} alt={item.title + " Picture"} className="w-56 h-[auto]" />
         </div>
         
       </div>   
