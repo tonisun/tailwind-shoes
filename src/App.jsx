@@ -3,6 +3,7 @@ import './App.css'
 import { ShoeDetail } from './components/ShoeDetail'
 import { Nav } from './components/Nav'
 import { Card } from './components/Card'
+import { SHOE_LIST } from './constant'
 
 
 export function App() {
@@ -13,7 +14,7 @@ export function App() {
       <Nav/>
       <ShoeDetail/>
       */}
-      <Card/>
+      <Card item={SHOE_LIST[0]} />
     </div>
         
     
