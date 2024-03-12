@@ -1,14 +1,21 @@
-export function Select() {
+import { IoIosArrowDown } from "react-icons/io"; 
+
+export function Select({title,options}) {
 
     return (
-      <dev className="">
-        <select name="" id="">
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
+      <div className="relative">
+        <select defaultValue={""} name={title} id={title} 
+          className="w-24 p-4 bg-white border border-gray-300 appearance-none">
+          <option value="" disabled hidden>
+            {title}
+          </option>
+          {options.map((option) => (
+            <option key={option} value={option}>{option}</option>
+          ))}
         </select>
-      </dev>
+        <div className="absolute inset-y-0 right-0 p-3 flex-center">
+          <IoIosArrowDown size={25}/>
+        </div>
+      </div>
     )
   }
