@@ -15,17 +15,17 @@ export function Nav (){
 
         {/* Logo */}
         <a href="#">
-            <NikeLogo className="h-20 w-20" />
+            <NikeLogo className="w-20 h-20" />
         </a>
 
         {/* Hamburger Button */}
-        <button onClick={()=>{setIsMobileMenuShown(!isMobileMenuShown)}} className='lg:hidden hover:bg-gray-100 p-2 focus:ring-2 focus:ring-gray-200 rounded-lg'>
+        <button onClick={()=>{setIsMobileMenuShown(!isMobileMenuShown)}} className='p-2 rounded-lg lg:hidden hover:bg-gray-100 focus:ring-2 focus:ring-gray-200'>
             <RxHamburgerMenu size={25}/>
         </button>
 
         {/* Menu List */}
         <div className={`${!isMobileMenuShown && "hidden"} w-full lg:block lg:w-auto`}>
-            <ul className='lg:space-x-8 flex flex-col lg:flex-row p-4 cursor-pointer bg-gray-50 text-lg border lg:bg-transparent border-gray-100 rounded lg:border-none text-left'>
+            <ul className='flex flex-col p-4 text-lg text-left border border-gray-100 rounded cursor-pointer lg:space-x-8 lg:flex-row bg-gray-50 lg:bg-transparent lg:border-none'>
                 {ROUTES.map((route, i) => {
                     return <li className={`lg:hover:bg-transparent lg:hover:text-blue-500 rounded-lg py-2 px-3 ${i === 0 ?"bg-blue-500 text-white lg:bg-transparent lg:text-blue-500" : "hover:bg-gray-100"} ${(i==3 || i==4) && "lg:text-white"}`} key={route}>{route}</li>
                 })}
@@ -33,8 +33,8 @@ export function Nav (){
         </div>
 
         {/* Shopping Bag Icon */}
-        <div className="fixed bottom-4 left-4 lg:static lg:mr-8">
-            <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md p-2 cursor-pointer">
+        <div className="fixed btn-press-anim bottom-4 left-4 lg:static lg:mr-8">
+            <div className="w-12 h-12 p-2 bg-white rounded-full shadow-md cursor-pointer flex-center">
                 <TbShoppingBag size={25}/>
             </div>
         </div>

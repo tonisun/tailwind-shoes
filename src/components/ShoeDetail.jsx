@@ -46,7 +46,7 @@ export function ShoeDetail(){
             <div className="space-x-10">
 
                 {/* Button */}
-                <button className="text-white bg-black h-14 w-44 hover:bg-gray-600 active:bg-gray-300">
+                <button className="text-white bg-black btn-press-anim h-14 w-44 hover:bg-gray-600 active:bg-gray-300">
                     Add to bag
                 </button>
 
