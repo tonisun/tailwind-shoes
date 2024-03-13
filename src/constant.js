@@ -13,54 +13,54 @@ export const QTYS = [1,2,3,4,5]
 /* Currencies */
 export const CURRS = [
     {
-      "curr-desc": "US-Dollar",
-      "curr-code": "USD",
-      "curr-symbol": "$"
+      curr_desc: "US-Dollar",
+      curr_code: "USD",
+      curr_symbol: "$"
     },
     {
-      "curr-desc": "Euro",
-      "curr-code": "EUR",
-      "curr-symbol": "€"
+      curr_desc: "Euro",
+      curr_code: "EUR",
+      curr_symbol: "€"
     },
     {
-      "curr-desc": "Britisches Pfund",
-      "curr-code": "GBP",
-      "curr-symbol": "£"
+      curr_desc: "Britisches Pfund",
+      curr_code: "GBP",
+      curr_symbol: "£"
     },
     {
-      "curr-desc": "Japanischer Yen",
-      "curr-code": "JPY",
-      "curr-symbol": "¥"
+      curr_desc: "Japanischer Yen",
+      curr_code: "JPY",
+      curr_symbol: "¥"
     },
     {
-      "curr-desc": "Australischer Dollar",
-      "curr-code": "AUD",
-      "curr-symbol": "$"
+      curr_desc: "Australischer Dollar",
+      curr_code: "AUD",
+      curr_symbol: "$"
     },
     {
-      "curr-desc": "Kanadischer Dollar",
-      "curr-code": "CAD",
-      "curr-symbol": "$"
+      curr_desc: "Kanadischer Dollar",
+      curr_code: "CAD",
+      curr_symbol: "$"
     },
     {
-      "curr-desc": "Schweizer Franken",
-      "curr-code": "CHF",
-      "curr-symbol": "CHF"
+      curr_desc: "Schweizer Franken",
+      curr_code: "CHF",
+      curr_symbol: "CHF"
     },
     {
-      "curr-desc": "Chinesischer Yuan",
-      "curr-code": "CNY",
-      "curr-symbol": "¥"
+      curr_desc: "Chinesischer Yuan",
+      curr_code: "CNY",
+      curr_symbol: "¥"
     },
     {
-      "curr-desc": "Schwedische Krone",
-      "curr-code": "SEK",
-      "curr-symbol": "kr"
+      curr_desc: "Schwedische Krone",
+      curr_code: "SEK",
+      curr_symbol: "kr"
     },
     {
-      "curr-desc": "Neuseeland-Dollar",
-      "curr-code": "NZD",
-      "curr-symbol": "$"
+      curr_desc: "Neuseeland-Dollar",
+      curr_code: "NZD",
+      curr_symbol: "$"
     }
   ]
   

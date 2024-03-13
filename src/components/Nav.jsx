@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const ROUTES = ['Home','About','Services','Pricing', 'Contact']
 
-export function Nav (){
+export function Nav ({onClickShoppingBtn}){
 
     const [isMobileMenuShown, setIsMobileMenuShown] = useState(false)
 
@@ -33,7 +33,7 @@ export function Nav (){
         </div>
 
         {/* Shopping Bag Icon */}
-        <div className="fixed btn-press-anim bottom-4 left-4 lg:static lg:mr-8">
+        <div onClick={onClickShoppingBtn} className="fixed btn-press-anim bottom-4 left-4 lg:static lg:mr-8">
             <div className="w-12 h-12 p-2 bg-white rounded-full shadow-md cursor-pointer flex-center">
                 <TbShoppingBag size={25}/>
             </div>

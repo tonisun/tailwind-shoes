@@ -2,7 +2,7 @@ import Nike1 from '../assets/n1-min.png'
 import { QTYS, SIZES } from '../constant'
 import { Select } from './Select'
 
-export function ShoeDetail(){
+export function ShoeDetail({curr}){
   return (
     <div className="flex flex-col space-y-4 text-left lg:flex-row-reverse">
 
@@ -32,7 +32,7 @@ export function ShoeDetail(){
             <div className='flex space-x-6'>
                 {/* Price */}
                 <div className="text-3xl font-extrabold md:text-6xl">
-                    100 $
+                    100 {curr.curr_symbol}
                 </div>
 
                 {/* Select Quantity*/}

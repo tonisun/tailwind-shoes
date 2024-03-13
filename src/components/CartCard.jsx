@@ -1,0 +1,21 @@
+export function CartCard({item}) {
+
+    return (
+      <div className={`${item.className} max-w-xl cursor-pointer transform transition hover:scale-105`}>
+        
+        {/* Section 1 - Text */}
+        <div className="p-8 text-left">
+            <div className="text-2xl font-bold">{item.title}</div>
+            <div className="mt-10 font-semibold underline underline-offset-4">
+              QTYS SIZE
+            </div> 
+        </div>
+
+        {/* Section 2 - Image */}
+        <div className="absolute left-[40%] top-5">
+            <img src={item.src} alt={item.title + " Picture"} className="w-56 h-[auto]" />
+        </div>
+        
+      </div>   
+    )
+  }
