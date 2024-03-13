@@ -15,17 +15,17 @@ export function Nav ({onClickShoppingBtn}){
 
         {/* Logo */}
         <a href="#">
-            <NikeLogo className="w-20 h-20" />
+            <NikeLogo className="w-20 h-20 dark:fill-white" />
         </a>
 
         {/* Hamburger Button */}
-        <button onClick={()=>{setIsMobileMenuShown(!isMobileMenuShown)}} className='p-2 rounded-lg lg:hidden hover:bg-gray-100 focus:ring-2 focus:ring-gray-200'>
+        <button onClick={()=>{setIsMobileMenuShown(!isMobileMenuShown)}} className='p-2 rounded-lg lg:hidden hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700'>
             <RxHamburgerMenu size={25}/>
         </button>
 
         {/* Menu List */}
         <div className={`${!isMobileMenuShown && "hidden"} w-full lg:block lg:w-auto`}>
-            <ul className='flex flex-col p-4 text-lg text-left border border-gray-100 rounded cursor-pointer lg:space-x-8 lg:flex-row bg-gray-50 lg:bg-transparent lg:border-none'>
+            <ul className='flex flex-col p-4 text-lg text-left border border-gray-100 rounded cursor-pointer lg:space-x-8 lg:flex-row bg-gray-50 lg:bg-transparent lg:border-none lg:dark:text-white'>
                 {ROUTES.map((route, i) => {
                     return <li className={`lg:hover:bg-transparent lg:hover:text-blue-500 rounded-lg py-2 px-3 ${i === 0 ?"bg-blue-500 text-white lg:bg-transparent lg:text-blue-500" : "hover:bg-gray-100"} ${(i==3 || i==4) && "lg:text-white"}`} key={route}>{route}</li>
                 })}
