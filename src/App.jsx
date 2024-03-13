@@ -24,6 +24,10 @@ export function App() {
 
   const [isShoppingBagOpen, setIsShoppingBagOpen] = useState(false)
 
+  /*  */
+  const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[Math.floor(Math.random() * SHOE_LIST.length)]);
+
+
   useEffect(() => {
     
     const isDarkMode = localStorage.getItem('isDisDarkMode')
@@ -52,7 +56,7 @@ export function App() {
       {/**/}  
       <Nav onClickShoppingBtn={() => setIsShoppingBagOpen(true)} />
       
-      <ShoeDetail curr={CURRS[1]} />
+      <ShoeDetail shoe={currentShoe} curr={CURRS[1]}/>
       
       <AllProducts items={SHOE_LIST} />
       
