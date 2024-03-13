@@ -5,7 +5,7 @@ import { QTYS, SIZES } from '../constant'
 export function CartItem({item: {product, qty, size, curr}}){
 
     return (
-        <div className="cursor-pointer bg-gray-50 hover:bg-[#daffa2] space-y-2">
+        <div className="cursor-pointer dark:bg-gray-700 bg-gray-50 hover:bg-[#daffa2] dark:hover:bg-gray-500 space-y-2">
             {/* Product Box */}
             <div className="flex p-2 space-x-2">
                 
@@ -14,12 +14,12 @@ export function CartItem({item: {product, qty, size, curr}}){
                 
                 {/* Wrap Title & Description in block */}
                 <div className="space-y-2">
-                    <div className="font-bold">{product.title}</div>
+                    <div className="font-bold dark:text-white">{product.title}</div>
                     <div className="text-sm text-gray-400">{product.description}</div>
                 </div>
                 
                 {/* Price */}
-                <div className="font-bold text-nowrap">{product.price} {curr.curr_symbol}</div>
+                <div className="font-bold text-nowrap dark:text-white">{product.price} {curr.curr_symbol}</div>
             </div>
 
             {/* QTYS SIZE & TRASH BOX */}
@@ -27,7 +27,7 @@ export function CartItem({item: {product, qty, size, curr}}){
                 
                 <div className="flex space-x-6">
                     <div className="">
-                        <div className="font-bold">QTYs</div>
+                        <div className="font-bold dark:text-white">QTYs</div>
                         <Select 
                             defaultValue={qty} 
                             title="" 
@@ -36,7 +36,7 @@ export function CartItem({item: {product, qty, size, curr}}){
                         />
                     </div>
                     <div className="">
-                        <div className="font-bold">SIZE</div>
+                        <div className="font-bold dark:text-white">SIZE</div>
                         <Select 
                             defaultValue={size}  
                             title="" 
@@ -47,7 +47,7 @@ export function CartItem({item: {product, qty, size, curr}}){
                 </div>
                 
                 <button>
-                    <CiTrash size={25} className="text-black"/>
+                    <CiTrash size={25} className="text-black dark:text-white"/>
                 </button>
             </div>
         </div>

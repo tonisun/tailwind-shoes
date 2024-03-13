@@ -8,7 +8,7 @@ export function AllProducts({items}){
             <div className="flex-center">
                 
                 {/* Title */}
-                <div className="text-4xl font-extrabold bg-[url('./assets/lines.pgn')] bg-center">
+                <div className="text-4xl font-extrabold bg-[url('./assets/lines.png')] bg-center dark:text-white">
                     NEW PRODUCTS    
                 </div>
                 

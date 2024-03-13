@@ -4,7 +4,7 @@ import { Select } from './Select'
 
 export function ShoeDetail({curr}){
   return (
-    <div className="flex flex-col space-y-4 text-left lg:flex-row-reverse">
+    <div className="flex flex-col space-y-4 text-left lg:flex-row-reverse dark:text-white">
 
         {/* Image */}
         <div className="flex-1 lg:-mt-40 lg:ml-28">
@@ -46,7 +46,7 @@ export function ShoeDetail({curr}){
             <div className="space-x-10">
 
                 {/* Button */}
-                <button className="text-white bg-black btn-press-anim h-14 w-44 hover:bg-gray-600 active:bg-gray-300">
+                <button className="text-white bg-black btn-press-anim h-14 w-44 hover:bg-gray-600 active:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-400">
                     Add to bag
                 </button>
 
