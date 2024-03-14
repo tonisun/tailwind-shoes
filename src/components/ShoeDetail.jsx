@@ -46,10 +46,18 @@ export function ShoeDetail({shoe, curr, onClickAdd}){
                     </div>
 
                     {/* Select Quantity*/}
-                    <Select onChange={(qty) => setForm({...form, qty})} title={"QTY"} options={QTYS} />
+                    <Select 
+                        value={form.qty} 
+                        onChange={(qty) => setForm({...form, qty})} 
+                        title={"QTY"} 
+                        options={QTYS} />
 
                     {/* Select Size*/}
-                    <Select onChange={(size) => setForm({...form, size})} title={"SIZE"} options={SIZES} />
+                    <Select 
+                        value={form.size} 
+                        onChange={(size) => setForm({...form, size})} 
+                        title={"SIZE"} 
+                        options={SIZES} />
                 </div>
 
 

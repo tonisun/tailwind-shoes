@@ -5,13 +5,17 @@ export function Select({
   title, 
   options, 
   className, 
-  defaultValue,
+  value,
   onChange
 }) {
 
     return (
       <div className="relative dark:text-black">
-        <select onChange={(event) => onChange(event.target.value) } defaultValue={defaultValue || ''} name={title} id={title} 
+        <select 
+          onChange={(event) => onChange(event.target.value) } 
+          value={value || ''}
+          name={title} 
+          id={title} 
           className={twMerge(`w-24 p-4 bg-white border border-gray-300 appearance-none ${className}`)}>
           <option value="" disabled hidden>
             {title}
