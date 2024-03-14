@@ -22,7 +22,7 @@ export function App() {
 
   const [cartItems, setCartItems] = useState([])
 
-  console.log('***', cartItems)
+  // console.log('*|*', cartItems)
 
   // Bei jeder Änderung von currentShoe, speichere den neuen Schuh
   useEffect(() => {
@@ -45,6 +45,13 @@ export function App() {
       "isDarkMode",
       window.document.documentElement.classList.contains('dark')
     )
+  }
+
+  const removeFromCart = (productId) => {
+    const updatedCartItems = [...cartItems]
+    const existingItemIndex = cartItems.findIndex(item => item.product.id === productId)
+    updatedCartItems.splice(existingItemIndex, 1)
+    setCartItems(updatedCartItems)
   }
   
   const addToCart = (product, qty, size) => {
@@ -74,7 +81,7 @@ export function App() {
       <AllProducts items={SHOE_LIST} onClickCard={setCurrentShoe} />
       
       <ShoppingBag isOpen={isShoppingBagOpen} onClickClose={() => setIsShoppingBagOpen(false)} >
-        <Cart cartItems={cartItems} curr={CURRS[1]} />
+        <Cart cartItems={cartItems} curr={CURRS[1]} onClickTrash={removeFromCart} />
       </ShoppingBag> 
 
       <div className='fixed bottom-4 right-4'>

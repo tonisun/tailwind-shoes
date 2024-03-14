@@ -1,7 +1,7 @@
 import { CartItem } from "./CartItem";
 
 
-export function Cart({cartItems, curr}) {
+export function Cart({cartItems, curr, onClickTrash}) {
 
     return(
 
@@ -10,7 +10,7 @@ export function Cart({cartItems, curr}) {
             <ul className="space-y-5">
                 {cartItems.map(cartItem =>
                     <li key={cartItem.product.id}>
-                        <CartItem item={cartItem} curr={curr} />
+                        <CartItem item={cartItem} curr={curr} onClickTrash={onClickTrash} />
                     </li>
                 )}
             </ul>
