@@ -1,7 +1,7 @@
 import { CartItem } from "./CartItem";
 
 
-export function Cart({cartItems}) {
+export function Cart({cartItems, curr}) {
 
     return(
 
@@ -10,7 +10,7 @@ export function Cart({cartItems}) {
             <ul className="space-y-5">
                 {cartItems.map(cartItem =>
                     <li key={cartItem.product.id}>
-                        <CartItem item={cartItem}/>
+                        <CartItem item={cartItem} curr={curr} />
                     </li>
                 )}
             </ul>

@@ -10,58 +10,71 @@ import { Cart } from './components/Cart'
 
 import {BiSun, BiMoon} from 'react-icons/bi'
 
-const FAKE_CART_ITEMS = SHOE_LIST.map(shoe => {
-    
-    return {
-      product: shoe,
-      qty: 1,
-      size: 43,
-      curr: CURRS[1], // €
-    }
-})
-
 export function App() {
 
   const [isShoppingBagOpen, setIsShoppingBagOpen] = useState(false)
 
-  /*  */
-  const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[Math.floor(Math.random() * SHOE_LIST.length)]);
+  // Zustand initialisieren mit einem zufälligen Schuh oder dem zuletzt gespeicherten Schuh
+  const [currentShoe, setCurrentShoe] = useState(() => {
+    const savedShoe = localStorage.getItem('lastSelectedShoe')
+    return SHOE_LIST[Math.floor(Math.random() * SHOE_LIST.length)] || savedShoe
+  })
+
+  const [cartItems, setCartItems] = useState([])
+
+  console.log('***', cartItems)
+
+  // Bei jeder Änderung von currentShoe, speichere den neuen Schuh
+  useEffect(() => {
+    localStorage.setItem('lastSelectedShoe', currentShoe);
+  }, [currentShoe])
 
 
   useEffect(() => {
-    
     const isDarkMode = localStorage.getItem('isDisDarkMode')
     
     if (isDarkMode === 'true'){
       window.document.documentElement.classList.add('dark')
-    }
-    
+    } 
   }, [])
 
   const toggleDarkMode = () => {
-    
     window.document.documentElement.classList.toggle('dark')
     
     localStorage.setItem(
       "isDarkMode",
       window.document.documentElement.classList.contains('dark')
     )
-    
+  }
+  
+  const addToCart = (product, qty, size) => {
+    if (qty && size){
+      const updatedCartItems = [...cartItems]
+      const existingItemIndex = cartItems.findIndex(item => item.product.id === product.id)
+      if(existingItemIndex > -1){
+        updatedCartItems[existingItemIndex].qty = qty
+        updatedCartItems[existingItemIndex].size = size
+      } else {
+        updatedCartItems.push({product, qty, size})
+      }
+
+      setCartItems(updatedCartItems)
+    }
   }
   
   return (
     <div className="p-10 animate-fadeIn4 xl:px-24 dark:bg-night">
 
       
-      {/**/}  
+      {/* */}  
       <Nav onClickShoppingBtn={() => setIsShoppingBagOpen(true)} />
       
-      <ShoeDetail shoe={currentShoe} curr={CURRS[1]}/>
+      <ShoeDetail shoe={currentShoe} curr={CURRS[1]} onClickAdd={addToCart} />
       
-      <AllProducts items={SHOE_LIST} />
+      <AllProducts items={SHOE_LIST} onClickCard={setCurrentShoe} />
       
       <ShoppingBag isOpen={isShoppingBagOpen} onClickClose={() => setIsShoppingBagOpen(false)} >
-        <Cart cartItems={FAKE_CART_ITEMS} />
+        <Cart cartItems={cartItems} curr={CURRS[1]} />
       </ShoppingBag> 
 
       <div className='fixed bottom-4 right-4'>

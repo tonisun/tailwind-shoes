@@ -2,7 +2,7 @@ import { CiTrash } from "react-icons/ci";
 import { Select } from "./Select";
 import { QTYS, SIZES } from '../constant'
 
-export function CartItem({item: {product, qty, size, curr}}){
+export function CartItem({item: {product, qty, size}, curr}){
 
     return (
         <div className="cursor-pointer dark:bg-gray-700 bg-gray-50 hover:bg-[#daffa2] dark:hover:bg-gray-500 space-y-2">
